@@ -13,7 +13,7 @@ const Home = () => {
 
   const fetchMovies = async (query = "") => {
     try {
-      const response = await axios.get("https://movie-app-backend-bthx.onrender.com/movies");
+      const response = await axios.get("http://localhost:5000/movies");
       const moviesData = response.data;
       if (query) {
         setFilteredMovies(
@@ -92,13 +92,11 @@ const Home = () => {
                 </h1>
                 <p className="mb-6">{featuredMovie.description}</p>
                 <div className="flex gap-4">
-                  {featuredMovie.videoUrl && (
-                    <a href={featuredMovie.videoUrl} target="_blank" rel="noopener noreferrer">
-                      <Button className="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded">
-                        Watch Now
-                      </Button>
-                    </a>
-                  )}
+                  <Link to={`/movie/${featuredMovie._id}`}>
+                    <Button className="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded">
+                      Watch Now
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </>
