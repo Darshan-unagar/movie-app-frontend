@@ -13,7 +13,7 @@ const Home = () => {
 
   const fetchMovies = async (query = "") => {
     try {
-      const response = await axios.get("http://localhost:5000/movies");
+      const response = await axios.get("https://movie-app-backend-bthx.onrender.com/movies");
       const moviesData = response.data;
       if (query) {
         setFilteredMovies(
