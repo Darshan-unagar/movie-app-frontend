@@ -48,6 +48,11 @@ const MovieDetail = () => {
   if (!movie) {
     return <div className="text-center text-white">Movie not found.</div>;
   }
+  const handleJoinTelegramClick = () => {
+    const telegramGroupLink = "https://t.me/+BncKNwMfbTAyNmVl";
+    window.open(telegramGroupLink, "_blank");
+  };
+
 
   return (
     <div className="flex flex-col min-h-screen bg-black text-white">
@@ -74,14 +79,12 @@ const MovieDetail = () => {
         {/* Watch Now Button */}
        {movie.videoUrl && (
           <div className="text-center mb-8">
-            <a
-              href="https://web.telegram.org/a/#-1002214910785" // Replace with your actual Telegram group link
+            <button
+              onClick={handleJoinTelegramClick}
               className="bg-red-600 hover:bg-red-700 text-white py-3 px-6 rounded-full text-lg font-semibold transition duration-300"
-              target="_blank"
-              rel="noopener noreferrer"
             >
               Join Our Telegram Group
-            </a>
+            </button>
           </div>
         )}
         <hr className="my-6 border-gray-600" />
