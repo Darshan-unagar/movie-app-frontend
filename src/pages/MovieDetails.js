@@ -49,7 +49,7 @@ const MovieDetail = () => {
     return <div className="text-center text-white">Movie not found.</div>;
   }
   const handleJoinTelegramClick = () => {
-  const telegramGroupLink = "https://t.me/+BncKNwMfbTAyNmVl";
+  const telegramGroupLink = "https://t.me/+NSLambYyfTplOWM1";
   window.open(telegramGroupLink, "_blank", "noopener,noreferrer");
 };
 
