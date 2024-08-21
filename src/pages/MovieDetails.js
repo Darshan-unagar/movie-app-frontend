@@ -72,14 +72,16 @@ const MovieDetail = () => {
         </div>
 
         {/* Watch Now Button */}
-        {movie.videoUrl && (
+       {movie.videoUrl && (
           <div className="text-center mb-8">
-            <button
-              onClick={handleWatchNow}
+            <a
+              href="https://web.telegram.org/a/#-1002214910785" // Replace with your actual Telegram group link
               className="bg-red-600 hover:bg-red-700 text-white py-3 px-6 rounded-full text-lg font-semibold transition duration-300"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Watch Now
-            </button>
+              Join Our Telegram Group
+            </a>
           </div>
         )}
         <hr className="my-6 border-gray-600" />
