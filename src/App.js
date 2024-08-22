@@ -18,6 +18,8 @@ import AdminHomePage from "./pages/admin/AdminHomePage";
 import AdminMoviesPage from "./pages/admin/AdminMoviesPage";
 import AdminCreateMoviePage from "./pages/admin/AdminCreateMoviePage";
 import EditMoviePage from "./pages/admin/EditMoviePage";
+import ManageUsersPage from "./pages/admin/ManageUsersPage ";
+import EditUserPage from "./pages/admin/EditUserPage ";
 
 const App = () => {
   const isAuthenticated = !!localStorage.getItem("authToken");
@@ -45,6 +47,8 @@ const App = () => {
           <Route path="/admin/movies" element={<AdminMoviesPage />} />
           <Route path="/admin/movies/create" element={<AdminCreateMoviePage />} />
           <Route path="/admin/movies/edit/:id" element={<EditMoviePage />} /> 
+          <Route path="/admin/users" element={<ManageUsersPage />} /> 
+          <Route path="/admin/users/edit/:id" element={<EditUserPage />} /> 
         </Routes>
       </Router>
     </ThemeProvider>
