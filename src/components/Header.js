@@ -58,7 +58,7 @@ const Header = ({ handleSearch }) => {
 
       {/* Drawer for mobile navigation */}
       <Drawer
-        title="Menu"
+        title=""
         placement="right"
         closable={true}
         onClose={toggleDrawer}
