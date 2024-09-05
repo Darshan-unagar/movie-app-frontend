@@ -31,7 +31,7 @@ const ManageUsersPage = () => {
     const fetchUsers = async () => {
       try {
         const token = localStorage.getItem('authToken');
-        const response = await axios.get('https://netstar.info.codesquareinfotech.com/admin/users', {
+        const response = await axios.get('https://movie-app-backend-bthx.onrender.com/admin/users', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -53,7 +53,7 @@ const ManageUsersPage = () => {
   const handleDeleteUser = async (userId) => {
     try {
       const token = localStorage.getItem('authToken');
-      await axios.delete(`https://netstar.info.codesquareinfotech.com/admin/users/${userId}`, {
+      await axios.delete(`https://movie-app-backend-bthx.onrender.com/admin/users/${userId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
