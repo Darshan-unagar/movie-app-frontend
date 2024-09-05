@@ -15,7 +15,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("https://netstar.info.codesquareinfotech.com/users/login", {
+      const response = await axios.post("https://movie-app-backend-bthx.onrender.com/users/login", {
         email,
         password,
       });
