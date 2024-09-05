@@ -13,7 +13,7 @@ const MoviePlayer = () => {
   React.useEffect(() => {
     const fetchMovie = async () => {
       try {
-        const response = await axios.get(`https://netstar.info.codesquareinfotech.com/movies/${id}`);
+        const response = await axios.get(`https://movie-app-backend-bthx.onrender.com/movies/${id}`);
         setMovie(response.data);
         setLoading(false);
       } catch (error) {
