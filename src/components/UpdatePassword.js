@@ -12,7 +12,7 @@ const UpdatePassword = () => {
   const handlePasswordUpdate = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.put('https://movie-app-backend-bthx.onrender.com/users/update-password', {
+      const response = await axios.put('https://netstar.info.codesquareinfotech.com/users/update-password', {
         currentPassword,
         newPassword
       }, {

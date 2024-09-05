@@ -33,7 +33,7 @@ const EditUserPage = () => {
     const fetchUser = async () => {
       try {
         const token = localStorage.getItem('authToken');
-        const response = await axios.get(`https://movie-app-backend-bthx.onrender.com/admin/users/${id}`, {
+        const response = await axios.get(`https://netstar.info.codesquareinfotech.com/admin/users/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -55,7 +55,7 @@ const EditUserPage = () => {
   const handleSave = async () => {
     try {
       const token = localStorage.getItem('authToken');
-      await axios.put(`https://movie-app-backend-bthx.onrender.com/admin/users/${id}`, { role }, {
+      await axios.put(`https://netstar.info.codesquareinfotech.com/admin/users/${id}`, { role }, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

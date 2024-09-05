@@ -9,9 +9,15 @@ const MoviesByCategory = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
+    const refreshPage = () => {
+      if (performance.getEntriesByType("navigation")[0].type !== "reload") {
+        window.location.reload();
+      }
+    };
+    refreshPage();
     const fetchMovies = async () => {
       try {
-        const response = await axios.get(`https://movie-app-backend-bthx.onrender.com/movies/category/${category}`);
+        const response = await axios.get(`https://netstar.info.codesquareinfotech.com/movies/category/${category}`);
         setMovies(response.data);
       } catch (error) {
         console.error('Error fetching movies:', error);

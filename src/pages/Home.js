@@ -4,6 +4,7 @@ import axios from "axios";
 import { Button } from "antd";
 import Header from "../components/Header";
 import AccountManu from "../components/AccountManu";
+import AdComponent from "../components/AdComponent ";
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
@@ -13,7 +14,7 @@ const Home = () => {
 
   const fetchMovies = async (query = "") => {
     try {
-      const response = await axios.get("https://movie-app-backend-bthx.onrender.com/movies");
+      const response = await axios.get("https://netstar.info.codesquareinfotech.com/movies");
       const moviesData = response.data;
       if (query) {
         setFilteredMovies(
@@ -38,6 +39,12 @@ const Home = () => {
   };
 
   useEffect(() => {
+    const refreshPage = () => {
+      if (performance.getEntriesByType("navigation")[0].type !== "reload") {
+        window.location.reload();
+      }
+    };
+    refreshPage();
     fetchMovies();
   }, []);
 
@@ -67,6 +74,7 @@ const Home = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
+    <AdComponent/>
       <Header
         handleSearch={handleSearch}
         accountMenu={<AccountManu />}

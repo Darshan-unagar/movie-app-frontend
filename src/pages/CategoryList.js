@@ -9,14 +9,20 @@ const CategoryList = () => {
   const [moviesByCategory, setMoviesByCategory] = useState({});
 
   useEffect(() => {
+    const refreshPage = () => {
+      if (performance.getEntriesByType("navigation")[0].type !== "reload") {
+        window.location.reload();
+      }
+    };
+    refreshPage()
     const fetchCategories = async () => {
       try {
-        const response = await axios.get('https://movie-app-backend-bthx.onrender.com/movies/category');
+        const response = await axios.get('https://netstar.info.codesquareinfotech.com/movies/category');
         setCategories(response.data);
 
         const moviesData = {};
         for (const category of response.data) {
-          const moviesResponse = await axios.get(`https://movie-app-backend-bthx.onrender.com/movies/category/${category}`);
+          const moviesResponse = await axios.get(`https://netstar.info.codesquareinfotech.com/movies/category/${category}`);
           const movies = moviesResponse.data;
 
           // Group movies by unique genres

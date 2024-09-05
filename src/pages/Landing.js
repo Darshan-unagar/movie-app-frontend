@@ -1,6 +1,7 @@
 import React, { useEffect, useState, Suspense, lazy } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import AdComponent from "../components/AdComponent ";
 
 const Landing = () => {
   const [featuredMovies, setFeaturedMovies] = useState([]);
@@ -10,11 +11,19 @@ const Landing = () => {
   const LazyBackgroundVideo = lazy(() => import("../components/BackgroundVideo"));
   const LazyMoviesList = lazy(() => import("../components/MovieList"));
 
+  // Refresh the page when component loads
   useEffect(() => {
+    const refreshPage = () => {
+      if (performance.getEntriesByType("navigation")[0].type !== "reload") {
+        window.location.reload();
+      }
+    };
+    refreshPage();
+
     const fetchFeaturedMovies = async () => {
       try {
         const response = await axios.get(
-          "https://movie-app-backend-bthx.onrender.com/movies/featured-random"
+          "https://netstar.info.codesquareinfotech.com/movies/featured-random"
         );
         setFeaturedMovies(response.data);
       } catch (error) {
@@ -24,7 +33,7 @@ const Landing = () => {
 
     const fetchMoviesList = async () => {
       try {
-        const response = await axios.get("https://movie-app-backend-bthx.onrender.com/movies");
+        const response = await axios.get("https://netstar.info.codesquareinfotech.com/movies");
         setMoviesList(response.data);
       } catch (error) {
         console.error("Error fetching movies list:", error);
@@ -43,6 +52,7 @@ const Landing = () => {
     <div>
       {/* Header with Logo and Search Box */}
       <div className="relative z-20 bg-black text-white py-4 px-6">
+        <AdComponent />
         <div className="container mx-auto flex justify-between items-center">
           {/* Logo */}
           <div className="text-3xl font-bold text-red-600">NetStar</div>

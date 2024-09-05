@@ -3,6 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -14,7 +15,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("https://movie-app-backend-bthx.onrender.com/users/login", {
+      const response = await axios.post("https://netstar.info.codesquareinfotech.com/users/login", {
         email,
         password,
       });

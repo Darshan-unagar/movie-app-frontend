@@ -16,7 +16,7 @@ const AdminMoviesPage = () => {
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const response = await axios.get("https://movie-app-backend-bthx.onrender.com/admin/movies");
+        const response = await axios.get("https://netstar.info.codesquareinfotech.com/admin/movies");
         setMovies(response.data);
         setLoading(false);
       } catch (error) {
@@ -48,7 +48,7 @@ const AdminMoviesPage = () => {
 
   const handleDelete = async (movieId) => {
     try {
-      await axios.delete(`https://movie-app-backend-bthx.onrender.com/admin/movies/${movieId}`, {
+      await axios.delete(`https://netstar.info.codesquareinfotech.com/admin/movies/${movieId}`, {
         headers: {
           Authorization: `Bearer ${authToken}`, 
         },

@@ -8,9 +8,15 @@ const FeaturedMovies = () => {
   const [featuredMovies, setFeaturedMovies] = useState([]);
 
   useEffect(() => {
+    const refreshPage = () => {
+      if (performance.getEntriesByType("navigation")[0].type !== "reload") {
+        window.location.reload();
+      }
+    };
+    refreshPage();
     const fetchFeaturedMovies = async () => {
       try {
-        const response = await axios.get("https://movie-app-backend-bthx.onrender.com/movies");
+        const response = await axios.get("https://netstar.info.codesquareinfotech.com/movies");
         setFeaturedMovies(response.data);
       } catch (error) {
         console.error("Error fetching featured movies:", error);

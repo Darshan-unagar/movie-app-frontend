@@ -5,6 +5,7 @@ import { Spin } from "antd";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ReviewSection from "../components/ReviewSection";
+import AdComponent from "../components/AdComponent ";
 
 const MovieDetail = () => {
   const { id } = useParams();
@@ -13,9 +14,15 @@ const MovieDetail = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    const refreshPage = () => {
+      if (performance.getEntriesByType("navigation")[0].type !== "reload") {
+        window.location.reload();
+      }
+    };
+    refreshPage()
     const fetchMovie = async () => {
       try {
-        const response = await axios.get(`https://movie-app-backend-bthx.onrender.com/movies/${id}`);
+        const response = await axios.get(`https://netstar.info.codesquareinfotech.com/movies/${id}`);
         setMovie(response.data);
         setLoading(false);
       } catch (error) {
@@ -57,6 +64,7 @@ const MovieDetail = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-black text-white">
+        <AdComponent/>
       <Header className="sticky top-0 z-10" />
 
       <div className="flex-grow container mx-auto p-6">

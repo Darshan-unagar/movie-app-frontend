@@ -15,7 +15,7 @@ const SearchBar = ({ className }) => {
       }
 
       const response = await axios.get(
-        `https://movie-app-backend-bthx.onrender.com/movies/search?query=${searchQuery}`
+        `https://netstar.info.codesquareinfotech.com/movies/search?query=${searchQuery}`
       );
       setSearchResults(response.data);
     } catch (error) {
