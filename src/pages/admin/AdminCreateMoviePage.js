@@ -67,7 +67,7 @@ const AdminCreateMoviePage = () => {
       };
   
       await axios.post(
-        'https://netstar.info.codesquareinfotech.com/admin/movies/create',
+        'https://movie-app-backend-bthx.onrender.com/admin/movies/create',
         newMovie,
         {
           headers: {
