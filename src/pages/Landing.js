@@ -33,7 +33,7 @@ const Landing = () => {
 
     const fetchMoviesList = async () => {
       try {
-        const response = await axios.get("https://netstar.info.codesquareinfotech.com/movies");
+        const response = await axios.get("https://movie-app-backend-bthx.onrender.com/movies");
         setMoviesList(response.data);
       } catch (error) {
         console.error("Error fetching movies list:", error);
