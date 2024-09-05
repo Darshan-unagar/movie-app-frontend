@@ -16,7 +16,7 @@ const FeaturedMovies = () => {
     refreshPage();
     const fetchFeaturedMovies = async () => {
       try {
-        const response = await axios.get("https://netstar.info.codesquareinfotech.com/movies");
+        const response = await axios.get("https://movie-app-backend-bthx.onrender.com/movies");
         setFeaturedMovies(response.data);
       } catch (error) {
         console.error("Error fetching featured movies:", error);
