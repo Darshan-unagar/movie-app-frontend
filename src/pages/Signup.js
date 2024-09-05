@@ -49,7 +49,7 @@ const Signup = () => {
       return;
     }
     try {
-      await axios.post('https://netstar.info.codesquareinfotech.com/users/register', {
+      await axios.post('https://movie-app-backend-bthx.onrender.com/users/register', {
         username: formData.username,
         email: formData.email,
         password: formData.password,
