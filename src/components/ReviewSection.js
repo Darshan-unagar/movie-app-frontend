@@ -39,7 +39,7 @@ const ReviewSection = ({ movieId }) => {
   const fetchReviews = async () => {
     try {
       const response = await axios.get(
-        `https://netstar.info.codesquareinfotech.com/movies/${movieId}`
+        `https://movie-app-backend-bthx.onrender.com/movies/${movieId}`
       );
       setReviews(response.data.reviews.reverse());
       setLoading(false);
@@ -62,7 +62,7 @@ const ReviewSection = ({ movieId }) => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `http://netstar.info.codesquareinfotech.com/movies/${movieId}/reviews`,
+        `https://movie-app-backend-bthx.onrender.com/movies/${movieId}/reviews`,
         { content: newReview },
         {
           headers: {
@@ -82,7 +82,7 @@ const ReviewSection = ({ movieId }) => {
   const handleLike = async (reviewId) => {
     try {
       const response = await axios.post(
-        `http://netstar.info.codesquareinfotech.com/movies/${movieId}/reviews/${reviewId}/like`,
+        `https://movie-app-backend-bthx.onrender.com/movies/${movieId}/reviews/${reviewId}/like`,
         null,
         {
           headers: {
@@ -110,7 +110,7 @@ const ReviewSection = ({ movieId }) => {
   const handleDislike = async (reviewId) => {
     try {
       const response = await axios.post(
-        `http://netstar.info.codesquareinfotech.com/movies/${movieId}/reviews/${reviewId}/dislike`,
+        `https://movie-app-backend-bthx.onrender.com/movies/${movieId}/reviews/${reviewId}/dislike`,
         null,
         {
           headers: {
@@ -172,7 +172,7 @@ const ReviewSection = ({ movieId }) => {
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://netstar.info.codesquareinfotech.com/users/login", {
+      const response = await axios.post("https://movie-app-backend-bthx.onrender.com/users/login", {
         email: loginEmail,
         password: loginPassword,
       });
