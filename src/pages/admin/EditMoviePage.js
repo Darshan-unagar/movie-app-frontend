@@ -18,7 +18,7 @@ const EditMoviePage = () => {
   useEffect(() => {
     const fetchMovie = async () => {
       try {
-        const response = await axios.get(`https://netstar.info.codesquareinfotech.com/admin/movies/${id}`, {
+        const response = await axios.get(`https://movie-app-backend-bthx.onrender.com/admin/movies/${id}`, {
           headers: {
             Authorization: `Bearer ${authToken}`,
           },
@@ -52,7 +52,7 @@ const EditMoviePage = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.put(`https://netstar.info.codesquareinfotech.com/admin/movies/${id}`, movie, {
+      await axios.put(`https://movie-app-backend-bthx.onrender.com/admin/movies/${id}`, movie, {
         headers: {
           Authorization: `Bearer ${authToken}`,
         },
