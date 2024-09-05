@@ -19,7 +19,7 @@ const Profile = () => {
     refreshPage()
     const fetchUserProfile = async () => {
       try {
-        const response = await axios.get('https://netstar.info.codesquareinfotech.com/users/profile', {
+        const response = await axios.get('https://movie-app-backend-bthx.onrender.com/users/profile', {
           headers: { 'Authorization': `Bearer ${localStorage.getItem('authToken')}` }
         });
         setUser(response.data);
@@ -32,7 +32,7 @@ const Profile = () => {
 
   const handleRemoveFromWatchlist = async (movieId) => {
     try {
-      await axios.post('https://netstar.info.codesquareinfotech.com/users/remove-from-watchlist', 
+      await axios.post('https://movie-app-backend-bthx.onrender.com/users/remove-from-watchlist', 
       { movieId }, 
       { headers: { 'Authorization': `Bearer ${localStorage.getItem('authToken')}` } 
     });
